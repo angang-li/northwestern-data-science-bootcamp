@@ -37,3 +37,16 @@ for item in candidate_percentage.items():
         winner_vote = item[1]
         winner = item[0]
 
+# Store results to a list
+results = []
+results.append('Election Results')
+results.append('-' * 25)
+results.append(f"Total Votes: {total_votes}")
+results.append('-' * 25)
+for candidate in candidates:
+    results.append("{}: ".format(candidate) + \
+                    "{:.1%}".format(candidate_percentage[candidate]) + \
+                    " ({})".format(candidate_number[candidate]))
+results.append('-' * 25)
+results.append(f"Winner: {winner}")
+results.append('-' * 25)
