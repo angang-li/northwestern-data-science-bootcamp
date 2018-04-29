@@ -32,4 +32,11 @@ with open(file_path, newline = '') as file_in:
         dictionary['State'] = state_abbrev
         new_data_list.append(dictionary)
 
+# Specify output file path
+output_file_path = file_name.split('.')[1] + '_out.csv'
 
+# Export output data to csv file
+with open(output_file_path, 'w', newline='') as file_out:
+    writer = csv.DictWriter(file_out, fieldnames = fieldnames)
+    writer.writeheader()
+    writer.writerows(new_data_list)
