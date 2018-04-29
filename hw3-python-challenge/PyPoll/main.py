@@ -14,6 +14,7 @@ keys = ['Candidate', 'Number of Votes', 'Percentage of Votes']
 voter_id = []
 candidates = []
 candidate_number = {}
+winner_vote = 0
 
 # Read the csv file using csv.DictReader
 with open(file_path, newline='') as file_in:
@@ -31,4 +32,8 @@ with open(file_path, newline='') as file_in:
 total_votes = len(voter_id) # total number of votes
 candidate_percentage = {candidate : candidate_number[candidate]/total_votes \
                         for candidate in candidates}
+for item in candidate_percentage.items():
+    if item[1] > winner_vote:
+        winner_vote = item[1]
+        winner = item[0]
 
