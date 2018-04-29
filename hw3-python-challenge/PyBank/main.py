@@ -38,3 +38,14 @@ for i in range(1, len(month_year_list)):
         change_min = [month_year_list[i], change]
 change_average = tot_change / tot_month
 
+# Store summary data in list
+line1 = 'Financial Analysis'
+line2 = '-' * 30
+line3 = 'Total Months: ' + str(tot_month)
+line4 = 'Total Revenue: $' + str(round(tot_revenue))
+line5 = 'Average Revenue Change: $' + str(round(change_average))
+line6 = 'Greatest Increase in Revenue: ' + change_max[0] + ' ($' + str(round(change_max[1])) + ')'
+line7 = 'Greatest Decrease in Revenue: ' + change_min[0] + ' ($' + str(round(change_min[1])) + ')'
+summary = []
+summary.extend([line1, line2, line3, line4, line5, line6, line7])
+
