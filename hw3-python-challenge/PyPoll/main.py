@@ -27,3 +27,8 @@ with open(file_path, newline='') as file_in:
         else:
             candidate_number[candidate] += 1
 
+# Calculate summary data
+total_votes = len(voter_id) # total number of votes
+candidate_percentage = {candidate : candidate_number[candidate]/total_votes \
+                        for candidate in candidates}
+
