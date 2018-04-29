@@ -13,7 +13,7 @@ file_path = os.path.join(directory, file_name)
 keys = ['Candidate', 'Number of Votes', 'Percentage of Votes']
 voter_id = []
 candidates = []
-dictionary = {}
+candidate_number = {}
 
 # Read the csv file using csv.DictReader
 with open(file_path, newline='') as file_in:
@@ -23,7 +23,7 @@ with open(file_path, newline='') as file_in:
         voter_id.append(row['Voter ID'])
         if candidate not in candidates:
             candidates.append(candidate)
-            dictionary[candidate] = 1
+            candidate_number[candidate] = 1
         else:
-            dictionary[candidate] += 1
+            candidate_number[candidate] += 1
 
