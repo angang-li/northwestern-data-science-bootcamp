@@ -21,8 +21,6 @@ def poll_results(directory, file_name):
     import csv
 
     # Assign file path of election data
-    directory = 'raw_data'
-    file_name = 'election_data_1.csv'
     file_path = os.path.join(directory, file_name)
 
     # Preallocate variables
