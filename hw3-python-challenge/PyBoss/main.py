@@ -40,3 +40,9 @@ with open(output_file_path, 'w', newline='') as file_out:
     writer = csv.DictWriter(file_out, fieldnames = fieldnames)
     writer.writeheader()
     writer.writerows(new_data_list)
+
+# Print output data to terminal
+for line in new_data_list:
+    print(f"{line['Emp ID']}, {line['First Name']}, {line['Last Name']}, \
+{line['DOB']}, {line['SSN']}, {line['State']}")
+
