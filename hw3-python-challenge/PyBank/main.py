@@ -28,13 +28,13 @@ with open(file_path, newline = '') as file_in:
         tot_revenue += revenue
 
 # Loop through the list to calculate summary data
-    tot_month = len(month_year_list)
-    for i in range(1, len(month_year_list)):
-        change = revenue_list[i] - revenue_list[i-1]
-        tot_change += change
-        if change > change_max[1]:
-            change_max = [month_year_list[i], change]
-        if change < change_min[1]:
-            change_min = [month_year_list[i], change]
-    change_average = tot_change / tot_month
+tot_month = len(month_year_list)
+for i in range(1, len(month_year_list)):
+    change = revenue_list[i] - revenue_list[i-1]
+    tot_change += change
+    if change > change_max[1]:
+        change_max = [month_year_list[i], change]
+    if change < change_min[1]:
+        change_min = [month_year_list[i], change]
+change_average = tot_change / tot_month
 
