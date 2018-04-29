@@ -49,3 +49,15 @@ line7 = 'Greatest Decrease in Revenue: ' + change_min[0] + ' ($' + str(round(cha
 summary = []
 summary.extend([line1, line2, line3, line4, line5, line6, line7])
 
+# Report summary data in terminal
+print('')
+print(file_name)
+for line in summary:
+    print(line)
+print('')
+
+# Write summary data into a text file
+output_file_path = file_name.split('.')[0] + '_output.txt'
+with open(output_file_path, 'w') as file_out:
+    for line in summary:
+        file_out.write(line + '\n')
