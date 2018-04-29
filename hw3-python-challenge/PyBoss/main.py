@@ -11,14 +11,14 @@ file_name = 'employee_data1.csv'
 file_path = os.path.join(directory, file_name)
 
 # Initiate variables
-dictionary = {}
 new_data_list = []
-fieldnames = ['Emp ID', '']
+fieldnames = ['Emp ID', 'First Name', 'Last Name', 'DOB', 'SSN', 'State']
 
 # Retrieve data from csv data
 with open(file_path, newline = '') as file_in:
     reader = csv.DictReader(file_in, delimiter = ',')
     for row in reader:
+        dictionary = {}
         dictionary['Emp ID'] = row['Emp ID']
         first, last = row['Name'].split(' ')
         dictionary['First Name'] = first
