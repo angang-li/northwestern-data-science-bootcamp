@@ -55,3 +55,9 @@ results.append('-' * 25)
 for line in results:
     print(line)
 
+# Save results to a text file
+output_file_path = file_name.split('.')[0] + '_out.txt'
+with open(output_file_path, 'w') as file_out:
+    for line in results:
+        file_out.write(line + '\n')
+
