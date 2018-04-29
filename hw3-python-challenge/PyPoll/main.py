@@ -75,3 +75,13 @@ def poll_results(directory, file_name):
         for line in results:
             file_out.write(line + '\n')
 
+# Analyze a specific csv file using the defined function
+directory = 'raw_data'
+file_name = 'election_data_1.csv'
+poll_results(directory, file_name)
+
+# Analyze a specific csv file using the defined function
+directory = 'raw_data'
+file_name = 'election_data_2.csv'
+poll_results(directory, file_name)
+
