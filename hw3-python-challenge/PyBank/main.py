@@ -77,3 +77,12 @@ def main(directory, file_name):
         for line in summary:
             file_out.write(line + '\n')
 
+# Analyze test record using the defined function
+directory = 'raw_data'
+file_name = 'budget_data_1.csv'
+main(directory, file_name)
+
+# Analyze test record using the defined function
+directory = 'raw_data'
+file_name = 'budget_data_2.csv'
+main(directory, file_name)
