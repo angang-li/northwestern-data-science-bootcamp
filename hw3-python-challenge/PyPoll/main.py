@@ -50,3 +50,8 @@ for candidate in candidates:
 results.append('-' * 25)
 results.append(f"Winner: {winner}")
 results.append('-' * 25)
+
+# Print results to terminal
+for line in results:
+    print(line)
+
