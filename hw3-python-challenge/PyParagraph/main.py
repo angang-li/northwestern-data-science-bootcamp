@@ -13,14 +13,23 @@ file_path = os.path.join(directory, file_name)
 with open(file_path, 'r') as file_in:
     paragraph = file_in.read()
 
-# Read paragraph into a list of words
-sentences_rough = paragraph.strip().split('. ')
-words_rough = paragraph.strip().split(' ')
+# Read paragraph into a list of sentences
+lines = paragraph.split('\n')
+sentences_clean = []
+for line in lines:
+    sentences_rough = line.strip().split('. ')
+    for sentence in sentences_rough:
+        if len(sentence) > 0:
+            sentences_clean.append(sentence)
+
+# Read sentences into a list of words
 words_clean = []
-for word_rough in words_rough:
-    word_clean = word_rough.strip().strip('(),.!?;:{}[]><').lower()
-    if len(word_clean) > 0:
-        words_clean.append(word_clean)
+for sentence in sentences_clean:
+    words_rough = sentence.strip().split(' ')
+    for word_rough in words_rough:
+        word_clean = word_rough.strip().strip('(),.!?;:{}[]><""/\\').lower()
+        if len(word_clean) > 0:
+            words_clean.append(word_clean)
 
 # Calculate total number of letters
 letters_total = 0
@@ -29,7 +38,7 @@ for word in words_clean:
 
 # Calculate metrics
 word_count = len(words_clean)
-sentence_count = len(sentences_rough)
+sentence_count = len(sentences_clean)
 average_sentence_length = float(word_count) / sentence_count
 average_letter_count = float(letters_total) / word_count
 
@@ -49,3 +58,4 @@ output_file_path = file_name.split('.')[0] + '_output.txt'
 with open(output_file_path, 'w', newline = '') as file_out:
     for line in results:
         file_out.write(line + '\n')
+
