@@ -31,4 +31,21 @@ for word in words_clean:
 word_count = len(words_clean)
 sentence_count = len(sentences_rough)
 average_sentence_length = float(word_count) / sentence_count
-average_letter_count = letters_total / word_count
+average_letter_count = float(letters_total) / word_count
+
+# Print results to terminal
+line1 = "Paragraph Analysis"
+line2 = "-" * 25
+line3 = f"Approximate Word Count: {word_count}"
+line4 = f"Approximate Sentence Count: {sentence_count}"
+line5 = f"Average Letter Count: {average_letter_count}"
+line6 = f"Average Sentence Length: {average_sentence_length}"
+results = [line1, line2, line3, line4, line5, line6]
+for line in results:
+    print(line)
+
+# Write results to a text file
+output_file_path = file_name.split('.')[0] + '_output.txt'
+with open(output_file_path, 'w', newline = '') as file_out:
+    for line in results:
+        file_out.write(line + '\n')
