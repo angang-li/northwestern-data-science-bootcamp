@@ -165,7 +165,7 @@ Average Sentence Length: 24.4
 
 ```python
 import re
-re.split("(?&lt;=[.!?]) +", paragraph)
+re.split("(?<=[.!?]) +", paragraph)
 ```
 
 ## Hints and Considerations
