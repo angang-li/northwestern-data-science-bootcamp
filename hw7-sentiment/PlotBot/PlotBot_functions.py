@@ -37,12 +37,12 @@ def scan(oldest_tweet, api=api):
     search_term = f"{my_account} Analyze:"
 
     # Retrieve the most recent tweets
-    public_tweets = api.search(search_term, count=1, result_type="recent", max_id=oldest_tweet)
+    public_tweets = api.search(search_term, count=10, result_type="recent", max_id=oldest_tweet)
 
     if len(public_tweets['statuses']) > 0:
 
         # Retrieve tweet text, author, id, and time
-        tweet = public_tweets['statuses'][0]
+        tweet = public_tweets['statuses'][-1]
         text = tweet['text']
         tweet_author = "@" + tweet["user"]["screen_name"]
         tweet_id = tweet['id']
