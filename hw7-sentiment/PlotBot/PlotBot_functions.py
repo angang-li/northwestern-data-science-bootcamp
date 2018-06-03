@@ -153,7 +153,7 @@ def plot(df, target_account):
                 color='steelblue', linewidth=0.5)
 
     # Format the plot
-    fig_name = f'polarity_{target_account}.png'
+    fig_name = f'polarity_images/polarity_{target_account}.png'
     plt.yticks(np.arange(-1,1.5,0.5))
     plt.xlim((df['tweets ago'].min()-10, 10))
     plt.ylim((-1.05, 1.05))
