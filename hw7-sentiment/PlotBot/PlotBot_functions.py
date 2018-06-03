@@ -21,12 +21,12 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
 
 # Scan for mentions
-def scan(oldest_tweet, api=api):
+def scan(newest_tweet, api=api):
 
     """
     Scan for mentions
     input:
-        oldest_tweet - int, max_id used to filter the search
+        newest_tweet - int, since_id used to filter the search
     output:
         target_account - str, target account name to pull tweets for sentiment analysis
         request - dict, dictionary of text, author, id, and time of the request
@@ -37,7 +37,7 @@ def scan(oldest_tweet, api=api):
     search_term = f"{my_account} Analyze:"
 
     # Retrieve the most recent tweets
-    public_tweets = api.search(search_term, count=10, result_type="recent", max_id=oldest_tweet)
+    public_tweets = api.search(search_term, count=10, result_type="recent", since_id=newest_tweet)
 
     if len(public_tweets['statuses']) > 0:
 

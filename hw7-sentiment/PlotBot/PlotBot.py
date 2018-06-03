@@ -31,13 +31,13 @@ from PlotBot_functions import scan, pull, analyze, plot, tweet_out
 # Analyzed account names
 account_analyzed = []
 counter = 0
-oldest_tweet = None
+newest_tweet = None
 
 while counter < 10:
     
     # Scan for mention
-    target_account, request = scan(oldest_tweet)
-    oldest_tweet = request['id'] - 1 # Reassign so the previous oldest isn't included in the new search
+    target_account, request = scan(newest_tweet)
+    newest_tweet = request['id'] + 1 # Reassign to only include tweets newer than the previous
 
     # If the target account is not empty and if the target account has not been analyzed
     if (len(target_account.strip('@')) > 0) & (target_account.lower() not in account_analyzed):
