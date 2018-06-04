@@ -162,6 +162,7 @@ def plot(df, target_account):
     plt.title(f'Sentiment Analysis of Tweets ({today_date})')
     plt.legend(loc='upper left', frameon=False, title='Tweets Source', bbox_to_anchor=[1,1])
     plt.savefig(fig_name, bbox_inches="tight", dpi = 300)
+    plt.close()
     None
     
     return fig_name
