@@ -10,4 +10,4 @@ Here below are example plots from [@alf7tf](https://twitter.com/alf7tf?lang=en).
 
 ![@CNN](polarity_images/polarity_@CNN.png)
 ![@realDonaldTrump](polarity_images/polarity_@realDonaldTrump.png)
-![@Twitter](polarity_images/polarity_@Twitter)
+![@Twitter](polarity_images/polarity_@Twitter.png)

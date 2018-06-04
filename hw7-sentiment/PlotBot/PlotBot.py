@@ -37,11 +37,13 @@ while counter < 10:
     
     # Scan for mention
     target_account, request = scan(newest_tweet)
-    newest_tweet = request['id'] + 1 # Reassign to only include tweets newer than the previous
-
+    
     # If the target account is not empty and if the target account has not been analyzed
     if (len(target_account.strip('@')) > 0) & (target_account.lower() not in account_analyzed):
         
+        # Reassign to only include tweets newer than the previous
+        newest_tweet = request['id'] + 1
+
         # Append to the list of analyzed account names
         account_analyzed.append(target_account.lower())
             
@@ -66,6 +68,9 @@ while counter < 10:
 
         except:
             print(f"\nRequested account {target_account} does not exist.")
-        
+    
+    else:
+        print("\nNo new request.")
+
     # Wait 5 minutes before another scan
     time.sleep(5*60)
