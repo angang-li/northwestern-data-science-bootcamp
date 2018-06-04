@@ -8,6 +8,9 @@ A plot from the sentiment analysis is then tweeted to the [@alf7tf](https://twit
 
 Here below are example plots from [@alf7tf](https://twitter.com/alf7tf?lang=en). See twitter account [@alf7tf](https://twitter.com/alf7tf?lang=en) for more.
 
-![@CNN](polarity_images/polarity_@CNN.png)
-![@realDonaldTrump](polarity_images/polarity_@realDonaldTrump.png)
-![@Twitter](polarity_images/polarity_@Twitter.png)
+<img src="polarity_images/polarity_@CNN.png" alt="@CNN" width="700" height="400">
+
+<img src="polarity_images/polarity_@realDonaldTrump.png" alt="@realDonaldTrump" width="700" height="400">
+
+<img src="polarity_images/polarity_@Twitter.png" alt="@Twitter" width="700" height="400">
+
