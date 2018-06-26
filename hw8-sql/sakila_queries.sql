@@ -160,15 +160,21 @@ where film_id in (
 
 -- 7e. Display the most frequently rented movies in descending order.
 select film.title, count(rental.rental_id) as 'frequency'
-from film, rental, inventory
-where film.film_id = inventory.film_id and inventory.inventory_id = rental.inventory_id
+from film
+inner join inventory
+on film.film_id = inventory.film_id 
+inner join rental
+on inventory.inventory_id = rental.inventory_id
 group by film.film_id
 order by frequency desc;
 
 -- 7f. Write a query to display how much business, in dollars, each store brought in.
 select store.store_id, sum(payment.amount) as 'business_in_dollars'
-from store, payment, staff
-where store.store_id = staff.store_id and staff.staff_id = payment.staff_id 
+from store
+inner join staff
+on store.store_id = staff.store_id 
+inner join payment
+on staff.staff_id = payment.staff_id 
 group by store.store_id;
 
 -- 7g. Write a query to display for each store its store ID, city, and country.
@@ -183,11 +189,15 @@ on city.country_id = country.country_id;
 
 -- 7h. List the top five genres in gross revenue in descending order. (Hint: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
 select category.name, sum(payment.amount) as 'gross_revenue'
-from payment, rental, inventory, film_category, category
-where payment.rental_id = rental.rental_id 
-and rental.inventory_id = inventory.inventory_id 
-and inventory.film_id = film_category.film_id
-and film_category.category_id = category.category_id
+from payment 
+inner join rental
+on payment.rental_id = rental.rental_id 
+inner join inventory
+on rental.inventory_id = inventory.inventory_id 
+inner join film_category
+on inventory.film_id = film_category.film_id
+inner join category
+on film_category.category_id = category.category_id
 group by category.category_id
 order by gross_revenue desc
 limit 5;
@@ -196,14 +206,18 @@ limit 5;
 -- Use the solution from the problem above to create a view. If you haven't solved 7h, you can substitute another query to create a view.
 create view top_five as
 		select category.name, sum(payment.amount) as 'gross_revenue'
-		from payment, rental, inventory, film_category, category
-		where payment.rental_id = rental.rental_id 
-		and rental.inventory_id = inventory.inventory_id 
-		and inventory.film_id = film_category.film_id
-		and film_category.category_id = category.category_id
+		from payment 
+		inner join rental
+		on payment.rental_id = rental.rental_id 
+		inner join inventory
+		on rental.inventory_id = inventory.inventory_id 
+		inner join film_category
+		on inventory.film_id = film_category.film_id
+		inner join category
+		on film_category.category_id = category.category_id
 		group by category.category_id
 		order by gross_revenue desc
-        limit 5;
+		limit 5;
 
 -- 8b. How would you display the view that you created in 8a?
 select * from top_five;
