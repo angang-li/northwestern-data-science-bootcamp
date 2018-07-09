@@ -54,6 +54,11 @@ h2 {
     font-size: 24px;
 }
 
+h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
 main {
     line-height: 2;
     color: #666666;
@@ -62,6 +67,10 @@ main {
 p {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.small-screen-hr {
+    display: none;
 }
 
 .main-content {
@@ -90,6 +99,12 @@ p {
     background-color: white;
 }
 
+.comparison-padding {
+    padding: 40px 50px;
+    margin: 20px 40px;
+    background-color: white;
+}
+
 .side-padding {
     padding: 20px 30px;
     margin: 20px 5px;
@@ -109,11 +124,17 @@ p {
     border: 2px solid white;
 }
 
+.col-sm-12 {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
 .side-highlight {
     border: 2px solid #2caaa5;
 }
 
-.side-row {
+.side-row, .main-row {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -156,5 +177,15 @@ footer {
 
     #large-screen-dropdown {
         display: none;
+    }
+
+    .small-screen-hr {
+        display: block;
+    }
+
+    .comparison-padding {
+        padding: 20px 30px;
+        margin: 20px 20px;
+        background-color: white;
     }
 }
