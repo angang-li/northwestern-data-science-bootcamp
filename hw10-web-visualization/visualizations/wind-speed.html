@@ -1,0 +1,137 @@
+<!-- Visualization Page - Wind Speed -->
+
+<!DOCTYPE html>
+<html lang="us-en">
+
+  <head>
+
+    <!--encoding-->
+    <meta charset="UTF-8">
+
+    <!--page title-->
+    <title>Bootstrap Visualization Dashboard</title>
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+
+  </head>
+
+  <body>
+
+    <!--navbar-->
+    <nav class="navbar navbar-default">
+      <div class="navbar-container container-fluid">
+
+        <!-- brand and toggle -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--site name-->
+          <a class="navbar-brand" href="../index.html" style="color: white;">Lattitude</a>
+        </div>
+    
+        <!-- nav dropdown and links -->
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+
+            <!-- large screen dropdown -->
+            <li class="dropdown" id="large-screen-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./temp.html">Max Temperature</a></li>
+                <li><a href="./humidity.html">Humidity</a></li>
+                <li><a href="./cloudiness.html">Cloudiness</a></li>
+                <li><a href="./wind-speed.html">Wind Speed</a></li>
+              </ul>
+            </li>
+
+            <!-- small screen dropdown -->
+            <a href="#" class="mobile-button" id="small-screen-dropdown" role="button">Plots<span class="caret"></span></a>
+            <ul class="nav navbar-nav mobile-menu" id="small-screen-dropdown-list">
+              <li><a href="./temp.html">Max Temperature</a></li>
+              <li><a href="./humidity.html">Humidity</a></li>
+              <li><a href="./cloudiness.html">Cloudiness</a></li>
+              <li><a href="./wind-speed.html">Wind Speed</a></li>
+            </ul>
+
+            <li><a href="../comparison.html">Comparison</a></li>
+            <li><a href="../data.html">Data</a></li>
+          </ul>
+        </div>
+        
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- content -->
+    <div class="content-container container-fluid">
+      <div class="row">
+
+        <!-- main content -->
+        <main class="col-md-7 col-xs-12">
+          <div class="main-padding">
+            <h1 class="header">Wind Speed</h1>
+            <hr>
+            <section class="main-content">
+              <img class="main-image-nonfloat" src="../Resources/assets/images/Fig3.png" alt="cloudiness vs latitude">
+              <p>As expected, the weather becomes significantly warmer as one approaches the equator (0 Degree Latitude). More interestingly, however, is the fact that the southern hemisphere tends to be warmer this time of year than the northern hemisphere. This is due to the tilt of the earth at the time of the year when data were gathered.</p>
+            </section>
+          </div>
+        </main>
+
+        <!-- side content -->
+        <side class="col-md-5 col-xs-12">
+          <div class="side-padding">
+            <h2 class="header">Visualizations</h2>
+            <hr>
+            <section class="container-fluid">
+              <div class="row side-row">
+                <div class="col-md-6 col-xs-3">
+                  <a href="./temp.html">
+                    <img src="../Resources/assets/images/Fig1.png" alt="max temperature vs latitude" class="side-image">
+                  </a>
+                </div>
+                <div class="col-md-6 col-xs-3">
+                  <a href="./humidity.html">
+                    <img src="../Resources/assets/images/Fig2.png" alt="humidity vs latitude" class="side-image">
+                  </a>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-6 col-xs-3">
+                  <a href="./cloudiness.html">
+                    <img src="../Resources/assets/images/Fig3.png" alt="cloudiness vs latitude" class="side-image">
+                  </a>
+                </div>
+                <div class="col-md-6 col-xs-3 side-highlight">
+                  <a href="./wind-speed.html">
+                    <img src="../Resources/assets/images/Fig4.png" alt="wind speed vs latitude" class="side-image">
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </side>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2018 Copyright: Northwestern University Data Science Bootcamp</a>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
