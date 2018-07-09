@@ -105,6 +105,14 @@ p {
     background-color: white;
 }
 
+.table-padding {
+    margin: 20px 0px;
+}
+
+th {
+    font-weight: bold;
+}
+
 .side-padding {
     padding: 20px 30px;
     margin: 20px 5px;
