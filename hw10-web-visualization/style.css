@@ -91,6 +91,7 @@ p {
 
 .content-container {
     margin: 20px 20px;
+    min-height: 86.5vh;
 }
 
 .main-padding {
@@ -156,6 +157,7 @@ footer {
     margin-top: 20px;
     padding: 10px;
     font-size: 12px;
+    border-top: 5px solid #2caaa5;
 }
 
 /* media queries */
