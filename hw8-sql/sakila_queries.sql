@@ -109,7 +109,8 @@ select film.film_id, film.title, count(film_actor.actor_id) as 'number_of_actors
 from film 
 inner join film_actor
 on film.film_id = film_actor.film_id
-group by film.film_id;
+group by film.film_id
+order by number_of_actors desc;
 
 -- 6d. How many copies of the film Hunchback Impossible exist in the inventory system?
 select count(inventory.inventory_id) as 'number_of_copies' 
@@ -144,12 +145,13 @@ where actor_id in (
 
 -- 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all Canadian customers. Use joins to retrieve this information.
 select first_name, last_name, email from customer
-where address_id in (
-		select address_id from address where city_id in (
-				select city_id from city where country_id = (
-						select country_id from country where country = 'Canada')
-                )
-		);
+join address
+on address.address_id = customer.address_id
+join city
+on city.city_id = address.city_id
+join country
+on city.country_id = country.country_id
+where country.country = 'Canada';
 
 -- 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as famiy films.
 select * from film
@@ -159,7 +161,7 @@ where film_id in (
         );
 
 -- 7e. Display the most frequently rented movies in descending order.
-select film.title, count(rental.rental_id) as 'frequency'
+select film.title, count(film.title) as 'frequency'
 from film
 inner join inventory
 on film.film_id = inventory.film_id 
