@@ -52,6 +52,7 @@ h1 {
 
 h2 {
     font-size: 24px;
+    margin-bottom: 25px;
 }
 
 h3 {
@@ -69,24 +70,31 @@ p {
     padding-bottom: 20px;
 }
 
+strong {
+    font-weight: bold
+}
+
 .small-screen-hr {
     display: none;
 }
 
 .main-content {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .main-image {
     float: left;
-    width: 70%;
+    width: 60%;
+    padding: 20px;
+    padding-left: 0px;
 }
 
 .main-image-nonfloat {
-    width: 100%;
+    width: 85%;
     padding: 0px;
-    margin: 0px;
+    margin: auto;
+    display: block;
 }
 
 .content-container {
@@ -95,7 +103,7 @@ p {
 }
 
 .main-padding {
-    padding: 20px 30px;
+    padding: 30px 40px 20px 40px;
     margin: 20px 5px;
     background-color: white;
 }
@@ -114,16 +122,22 @@ th {
     font-weight: bold;
 }
 
+th, td {
+    text-align: center;
+}
+
 .side-padding {
     padding: 20px 30px;
+    padding-top: 40px;
     margin: 20px 5px;
     background-color: white;
 }
 
 .side-image {
-    width: 100%;
+    width: 90%;
     padding: 0px;
-    margin: 0px;
+    margin: auto;
+    display: block;
 }
 
 .col-xs-3 {
