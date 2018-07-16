@@ -12,40 +12,54 @@
 
   <style>
     html, body {
-    min-height: 100vh;
-    min-height: 100%;
-    text-align: left;
+      min-height: 100vh;
+      min-height: 100%;
+      text-align: left;
     }
 
     body {
-    font-family: Arial, Helvetica, sans-serif;
-      
-    }
-
-    .header {
-    font-weight: bold;
-    color: #333;
-    }
-
-    h1 {
-    font-size: 30px;
-    padding-bottom: 20px;
-    }
-
-    h3 {
-        font-size: 24px;
-        padding: 0px;
-        padding-bottom: 10px;
-    }
-
-    h5 {
-        font-size: 18px;
-        padding: 10px 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: black;
     }
 
     .container {
       width: 100%;
-      padding: 30px 6%;
+      padding: 0px;
+      margin: 0px;
+    }
+    
+    .container-fluid, .row {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .header {
+      font-weight: bold;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 30px;
+      padding-bottom: 40px;
+      color: #FFF; 
+      font-weight: normal; 
+      text-shadow: #000 2px 2px 3px;
+    }
+
+    h3 {
+      font-size: 24px;
+      padding: 0px;
+      padding-bottom: 10px;
+    }
+
+    .weather-header {
+      padding: 0px;
+      padding-bottom: 20px;
+    }
+
+    h5 {
+      font-size: 18px;
+      padding: 10px 0px;
     }
 
     h1, .button-p {
@@ -55,67 +69,95 @@
     }
 
     .col-xs-12 {
-      padding: 20px 0px;
-    }
-    
-    .featured-image {
-      padding: 0px;
-      padding-right: 6%;
-    }
-
-    .side {
       padding: 0px;
     }
 
     .card {
-      margin: 30px 0px;
+      margin: 0px;
       padding: 0px 2%;
     }
 
-    .news {
-      margin-top: 40px;
+    .news-weather, .feature-fact {
+      background: #FFF;
+      margin: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    .news, .current-weather {
+      padding: 40px 4%;
+      background: #e4e9ef;
+      background: #FFF;
+      margin: 0px;
+    }
+
+    .feature-fact {
+      border-top: 7px solid #e4e9ef;
+      /* border-top: 4px solid rgb(75, 106, 141); */
+    }
+
+    .featured-image, .mars-facts {
+      padding: 40px 4%;
+      background: #e4e9ef;
+      background: #FFF;
+      margin: 0px;
+    }
+
+    .card-img-bottom, .table-responsive {
+      margin-top: 20px;
     }
 
     .hemispheres {
-      margin-top: 40px;
+      margin-top: 50px;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 40px;
     }
 
     .card-hemispheres {
+      padding: 15px;
       margin: 0px;
-      width: 80%;
+      width: 100%;
       display: block;
       margin: auto;
     }
 
     .header-hemispheres {
       text-align: center;
-      
+      color: #FFF; 
+      text-shadow: #000 2px 2px 3px;
+      padding-bottom: 20px;
     }
 
     .card-body-hemisphere {
       border: 1px solid rgb(200, 200, 200);
       padding: 2px;
-      background: rgba(220, 220, 220, 0.1);
+      background: #fff;
+    }
+
+    .hemisphere-title {
+      margin-left: 10px;
     }
 
     img {
-        width: 100%;
-        /* margin-top: 10px; */
+      width: 100%;
     }
 
     th {
-        font-weight: bold;
+      font-weight: bold;
     }
 
     th, td {
-        text-align: center;
-    }
-    
-    .feature-fact {
-      border: 1px solid rgb(200, 200, 200);
-      background: rgba(220, 220, 220, 0.1);
+      text-align: center;
     }
 
+    .jumbotron {
+      background-image: url("https://astrogeology.usgs.gov/images/backgrounds/mars.jpg");
+      background-size: cover;
+      padding: 80px 0px;
+      /* background: #4b6a8d; */
+      margin: 0px;
+    }
   </style>
 </head>
 
@@ -123,33 +165,39 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1 class="header">Mission to Mars</h1>
+      <h1 class="header" style="color: #FFF; font-weight: normal; text-shadow: #000 2px 2px 3px;">Mission to Mars</h1>
       <p class="button-p"><a class="btn btn-primary btn-lg button-text" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    <div class="card news">
-      <h3 class="card-header header">Latest Mars News</h5>
-      <div class="card-body">
-        <h5 class="card-title header">{{ mars["news_title"] }}</h5>
-        <p class="card-text">{{ mars["news_p"] }}</p>
+    <div class="container-fluid">
+      <div class="row news-weather">
+        <div class="col-md-6 col-xs-12 left">
+          <div class="card news">
+            <h3 class="card-header header">Latest Mars News</h3>
+            <div class="card-body">
+              <h5 class="card-title header">{{ mars["news_title"] }}</h5>
+              <p class="card-text">{{ mars["news_p"] }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xs-12 right">
+          <div class="current-weather card">
+            <h3 class="card-header header weather-header">Current Weather on Mars</h3>
+            <p class="card-text">{{ mars["mars_weather"] }}</p>
+          </div>
+        </div>
       </div>
     </div>
-    
 
     <div class="container-fluid">
       <div class="row feature-fact">
-        <div class="col-md-7 col-xs-12 featured-image">
-          <div class="card">
+        <div class="col-md-6 col-xs-12 left">
+          <div class="featured-image card">
             <h3 class="card-header header">Featured Mars Image</h3>
             <img class="card-img-bottom" src={{ mars["featured_image_url"] }} alt="Featured Mars Image">
           </div>
         </div>
-        <div class="col-md-5 col-xs-12 side">
-          <div class="current-weather card">
-            <h3 class="card-header header">Current Weather on Mars</h3>
-            <p class="card-text">{{ mars["mars_weather"] }}</p>
-          </div>
-
+        <div class="col-md-6 col-xs-12 right">
           <div class="mars-facts card">
             <h3 class="card-header header">Mars Facts</h3>
             <div class="table-responsive">
@@ -170,7 +218,7 @@
                 <div class="card card-hemispheres"> <!--bg-light mb-3-->
                   <div class="card-body card-body-hemisphere">
                     <img class="card-img-top" src={{ item.img_url }} alt="Mars hemisphere image">
-                    <h5 class="card-title header">{{ item.title }}</h4>
+                    <h5 class="card-title header hemisphere-title">{{ item.title }}</h5>
                   </div>
                 </div>
               </div>
