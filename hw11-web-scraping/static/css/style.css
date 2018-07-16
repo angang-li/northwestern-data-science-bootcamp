@@ -1,0 +1,104 @@
+html, body {
+min-height: 100vh;
+min-height: 100%;
+text-align: left;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.header {
+font-weight: bold;
+color: #333;
+}
+
+h1 {
+font-size: 30px;
+padding-bottom: 20px;
+}
+
+h3 {
+font-size: 24px;
+padding: 0px;
+padding-bottom: 10px;
+}
+
+h5 {
+font-size: 18px;
+padding: 10px 0px;
+}
+
+.container {
+width: 100%;
+padding: 30px 6%;
+}
+
+h1, .button-p {
+margin: auto;
+display: block;
+text-align: center;
+}
+
+.col-xs-12 {
+padding: 20px 0px;
+}
+
+.featured-image {
+padding: 0px;
+padding-right: 6%;
+}
+
+.side {
+padding: 0px;
+}
+
+.card {
+margin: 30px 0px;
+padding: 0px 2%;
+}
+
+.news {
+margin-top: 40px;
+}
+
+.hemispheres {
+margin-top: 40px;
+}
+
+.card-hemispheres {
+margin: 0px;
+width: 80%;
+display: block;
+margin: auto;
+}
+
+.header-hemispheres {
+text-align: center;
+
+}
+
+.card-body-hemisphere {
+border: 1px solid rgb(200, 200, 200);
+padding: 2px;
+background: rgba(220, 220, 220, 0.1);
+}
+
+img {
+width: 100%;
+/* margin-top: 10px; */
+}
+
+th {
+font-weight: bold;
+}
+
+th, td {
+text-align: center;
+}
+
+.feature-fact {
+border: 1px solid rgb(200, 200, 200);
+background: rgba(220, 220, 220, 0.1);
+}

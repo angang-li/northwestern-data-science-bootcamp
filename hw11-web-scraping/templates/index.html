@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+  <style>
+    html, body {
+    min-height: 100vh;
+    min-height: 100%;
+    text-align: left;
+    }
+
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+      
+    }
+
+    .header {
+    font-weight: bold;
+    color: #333;
+    }
+
+    h1 {
+    font-size: 30px;
+    padding-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 24px;
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+
+    h5 {
+        font-size: 18px;
+        padding: 10px 0px;
+    }
+
+    .container {
+      width: 100%;
+      padding: 30px 6%;
+    }
+
+    h1, .button-p {
+      margin: auto;
+      display: block;
+      text-align: center;
+    }
+
+    .col-xs-12 {
+      padding: 20px 0px;
+    }
+    
+    .featured-image {
+      padding: 0px;
+      padding-right: 6%;
+    }
+
+    .side {
+      padding: 0px;
+    }
+
+    .card {
+      margin: 30px 0px;
+      padding: 0px 2%;
+    }
+
+    .news {
+      margin-top: 40px;
+    }
+
+    .hemispheres {
+      margin-top: 40px;
+    }
+
+    .card-hemispheres {
+      margin: 0px;
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
+
+    .header-hemispheres {
+      text-align: center;
+      
+    }
+
+    .card-body-hemisphere {
+      border: 1px solid rgb(200, 200, 200);
+      padding: 2px;
+      background: rgba(220, 220, 220, 0.1);
+    }
+
+    img {
+        width: 100%;
+        /* margin-top: 10px; */
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    th, td {
+        text-align: center;
+    }
+    
+    .feature-fact {
+      border: 1px solid rgb(200, 200, 200);
+      background: rgba(220, 220, 220, 0.1);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="header">Mission to Mars</h1>
+      <p class="button-p"><a class="btn btn-primary btn-lg button-text" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="card news">
+      <h3 class="card-header header">Latest Mars News</h5>
+      <div class="card-body">
+        <h5 class="card-title header">{{ mars["news_title"] }}</h5>
+        <p class="card-text">{{ mars["news_p"] }}</p>
+      </div>
+    </div>
+    
+
+    <div class="container-fluid">
+      <div class="row feature-fact">
+        <div class="col-md-7 col-xs-12 featured-image">
+          <div class="card">
+            <h3 class="card-header header">Featured Mars Image</h3>
+            <img class="card-img-bottom" src={{ mars["featured_image_url"] }} alt="Featured Mars Image">
+          </div>
+        </div>
+        <div class="col-md-5 col-xs-12 side">
+          <div class="current-weather card">
+            <h3 class="card-header header">Current Weather on Mars</h3>
+            <p class="card-text">{{ mars["mars_weather"] }}</p>
+          </div>
+
+          <div class="mars-facts card">
+            <h3 class="card-header header">Mars Facts</h3>
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-sm">
+                {{ mars.table_html | safe }}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row hemispheres">
+            <h3 class="header header-hemispheres">Mars Hemisphere</h3>
+            {% for item in mars["hemisphere_image_urls"] %}
+              <div class="col-md-6 col-xs-12">
+                <div class="card card-hemispheres"> <!--bg-light mb-3-->
+                  <div class="card-body card-body-hemisphere">
+                    <img class="card-img-top" src={{ item.img_url }} alt="Mars hemisphere image">
+                    <h5 class="card-title header">{{ item.title }}</h4>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
