@@ -173,6 +173,7 @@
       <p class="button-p"><a class="btn btn-primary btn-lg button-text" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
+    {% if mars.news_title %}
     <div class="container-fluid">
       <div class="row news-weather">
         <div class="col-md-6 col-xs-12 left">
@@ -229,7 +230,7 @@
             {% endfor %}
         </div>
     </div>
-
+    {% endif %}
     
 
   </div>

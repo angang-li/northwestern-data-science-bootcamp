@@ -16,7 +16,10 @@ mongo = PyMongo(app)
 def home():
 
     # Find data
-    mars = list(mongo.db.collection.find())[-1]
+    try:
+        mars = list(mongo.db.collection.find())[-1]
+    except:
+        mars = {}
 
     # return template and data
     return render_template("index.html", mars=mars)
