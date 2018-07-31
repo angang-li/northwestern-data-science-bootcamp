@@ -11,13 +11,11 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+#################################################
+# Flask and Database Setup
+#################################################
+
 app = Flask(__name__)
-
-
-#################################################
-# Database Setup
-#################################################
-
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
 db = SQLAlchemy(app)
 
@@ -30,6 +28,9 @@ Base.prepare(db.engine, reflect=True)
 Samples_Metadata = Base.classes.sample_metadata
 Samples = Base.classes.samples
 
+#################################################
+# Flask Routes
+#################################################
 
 @app.route("/")
 def index():
@@ -67,7 +68,7 @@ def sample_metadata(sample):
     # Create a dictionary entry for each row of metadata information
     sample_metadata = {}
     for result in results:
-        sample_metadata["sample"] = result[0]
+        sample_metadata["SAMPLED"] = result[0]
         sample_metadata["ETHNICITY"] = result[1]
         sample_metadata["GENDER"] = result[2]
         sample_metadata["AGE"] = result[3]
