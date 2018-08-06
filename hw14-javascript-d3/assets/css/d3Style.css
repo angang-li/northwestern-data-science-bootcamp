@@ -1,0 +1,58 @@
+/* Students:
+ * =========
+ * Add styling to your d3 chart with this file. */
+ #hairmetal {
+    border-radius: 8px;
+  }
+  
+  .chart::before {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    z-index: -1;
+    display: block;
+    width: 400px;
+    height: 300px;
+    content: " ";
+    background-image: url("maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    opacity: 0.3;
+  }
+  
+  .tooltip {
+    position: absolute;
+    width: 155px;
+    height: 60px;
+    padding: 2px;
+    padding-top: 8px;
+    line-height: 1;
+    font: 12px sans-serif;
+    color: white;
+    text-align: center;
+    /* background: #551aaf; */
+    background: rgba(0, 0, 0, 0.8);
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  .active {
+    font-weight: bold;
+    fill: #000;
+    /* fill: #551aaf; */
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+  }
+  
+  .inactive {
+    font-weight: lighter;
+    fill: gainsboro;
+    transition: fill 0.3s ease-out;
+    text-anchor: middle;
+  }
+  
+  .inactive:hover {
+    fill: gray;
+    cursor: pointer;
+  }
