@@ -1,0 +1,6 @@
+config.py
+__pycache__
+.ipynb_checkpoints
+.DS_Store
+tectonicplates-master
+tectonicplates-master.zip
