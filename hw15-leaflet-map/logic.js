@@ -90,7 +90,7 @@ d3.json(queryUrl, function(data) {
 
       // Create popups
       onEachFeature: function (feature, layer) {
-        return layer.bindPopup(feature.properties.place);
+        return layer.bindPopup(`<strong>Place:</strong> ${feature.properties.place}<br><strong>Magnitude:</strong> ${feature.properties.mag}`);
       }
     });
 
